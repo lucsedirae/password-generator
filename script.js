@@ -1,22 +1,23 @@
 //generateBtn creates a link between the html id and the js so that when the button is clicked it calls the write password function and starts the process
 var generateBtn = document.querySelector("#generate");
-//passwordArray is the variable to which the password will be written as the randomizers return their values
-var passwordArray = [];
-var passwordLength = 0;
-//the choice variables store the values for the user input section from generatePassord()
-var userLengthChoice = " ";
-var userUpperChoice = false;
-var userLowerChoice = false;
-var userNumericChoice = false;
-var userSpecialChoice = false;
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  password = passwordArray.join("");
+    //passwordArray is the variable to which the password will be written as the randomizers return their values
+    passwordArray = [];
+    passwordLength = 0;
+    //the choice variables store the values for the user input section from generatePassord()
+    userLengthChoice = " ";
+    userUpperChoice = false;
+    userLowerChoice = false;
+    userNumericChoice = false;
+    userSpecialChoice = false;
 
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
+    var password = generatePassword();
+    password = passwordArray.join("");
+
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
 }
 
 // Add event listener to generate button. This listener will listen for a click of the button and then call the function writePassword() when clicked
@@ -33,7 +34,7 @@ function generatePassword() {
         //parseInt converts the input of the user from a string to an integer
         passwordLength = parseInt(userLengthChoice, 10);
             //The if statement validates the user's choice of integer
-            if (userLengthChoice < 8 || userLengthChoice > 128) {
+            if (passwordLength < 8 || passwordLength > 128) {
                 alert("This selection is not valid. Please try again.");
                 userInput();
             } 
@@ -41,17 +42,23 @@ function generatePassword() {
         userLowerChoice = confirm("Would you like to use lower case letters? Ok for yes, cancel for no.");
         userNumericChoice = confirm("Would you like to use numeric characters? Ok for yes, cancel for no.");
         userSpecialChoice = confirm("Would you like to use special characters? Ok for yes, cancel for no.");
+        // return;
     }
 
     //randomizedResult is a function that 
     function randomizedResult() {
         //specialChars is a string of possible outcomes for characters that are generated when special characters is an active parameter.
-        var specialChars = "!@#$%^&*()?";
-        var characterRandomizer = 0;
+        const specialChars = "!@#$%^&*()?-_=+/][}{`~";
+        let characterRandomizer = 0;
 
-        for (var i = 0; i < passwordLength; i++) {
+        //this while loop generates random characters according to the inputs given in userInput() until the user's length input is met
+        while (passwordArray.length < passwordLength) {
+
+            //characterRandomizer generates a random number between 0 and 4.
             characterRandomizer = Math.floor(Math.random() * 4);
-
+            console.log(characterRandomizer);
+            //This if statement will validate whether user inputs are active and if so will generate a random character by referencing the Character Code
+            //characterRandomizer is compared by the if statement so that the occurence of different character types is randomized
             if (characterRandomizer === 0 && userUpperChoice === true) {
                 passwordArray.push([String.fromCharCode(Math.floor(Math.random() * 26) + 65)]);
             } else if (characterRandomizer === 1 && userLowerChoice === true) {
@@ -62,6 +69,6 @@ function generatePassword() {
                 passwordArray.push(specialChars[Math.floor(Math.random() * specialChars.length)]);
             }
         }
+        return passwordArray;
     }
-    return passwordArray;
 }
