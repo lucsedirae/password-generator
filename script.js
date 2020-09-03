@@ -26,24 +26,34 @@ generateBtn.addEventListener("click", writePassword);
 //generatePassword() is a function that contains and calls the input and randomize functions
 function generatePassword() {
     userInput();
-    randomizedResult();
 
     function userInput() {
-        //These variable declarations gather and store user input data defining the password generator's parameters
+        //userLengthChoice gathers and stores the user's selection for how long the password should be
         userLengthChoice = prompt("Please select a password length between 8 and 128 characters long.");
-        //parseInt converts the input of the user from a string to an integer
-        passwordLength = parseInt(userLengthChoice, 10);
-            //The if statement validates the user's choice of integer
+            //parseInt converts the input of the user from a string to an integer
+            passwordLength = parseInt(userLengthChoice, 10);
+            //This if statement validates the user's choice of integer
             if (passwordLength < 8 || passwordLength > 128) {
                 alert("This selection is not valid. Please try again.");
                 userInput();
+                return;
             } 
+            //var isLetter validates the userLengthChoice to confirm that input is numeric
+            var isLetter = Number(userLengthChoice);
+            if (isNaN(isLetter)) {
+                alert("This selection is not valid. Please try again.");
+                userInput();
+                return;
+            }
+
+        //These variable declarations gather and store user input data defining the password generator's parameters
         userUpperChoice = confirm("Would you like to use upper case letters? Ok for yes, cancel for no.");
         userLowerChoice = confirm("Would you like to use lower case letters? Ok for yes, cancel for no.");
         userNumericChoice = confirm("Would you like to use numeric characters? Ok for yes, cancel for no.");
         userSpecialChoice = confirm("Would you like to use special characters? Ok for yes, cancel for no.");
-        // return;
     }
+
+    randomizedResult();
 
     //randomizedResult is a function that 
     function randomizedResult() {
