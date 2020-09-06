@@ -1,5 +1,8 @@
 //generateBtn creates a link between the html id and the js so that when the button is clicked it calls the write password function and starts the process
 var generateBtn = document.querySelector("#generate");
+var copyBtn = document.querySelector("#copyBtn");
+var passwordFinal = document.querySelector("#password");
+
 
 // Write password to the #password input
 function writePassword() {
@@ -20,8 +23,18 @@ function writePassword() {
     passwordText.value = password;
 }
 
+function copyPassword() {
+    //passwordFinal.select highlights the password in the password field
+    passwordFinal.select();
+    //document.ExecCommand("Copy") copies the highlighted password to the clipboard
+    document.execCommand("Copy");
+}
+
 // Add event listener to generate button. This listener will listen for a click of the button and then call the function writePassword() when clicked
 generateBtn.addEventListener("click", writePassword);
+// copyBtn.addEventListener("click", copyPassword);
+copyBtn.addEventListener("click", copyPassword);
+
 
 //generatePassword() is a function that contains and calls the input and randomize functions
 function generatePassword() {
