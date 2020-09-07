@@ -13,20 +13,20 @@ body,
 }
 
 body {
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Lexend Exa', sans-serif;
   background-color: #f9fbfd;
 }
 
 
 .wrapper {
-  padding-top: 30px;
+  padding-top: 5px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 header {
   text-align: center;
-  padding: 10px;
+  padding: 0px 10px 0px 10px;
   padding-top: 0px;
 
 }
@@ -41,7 +41,7 @@ h1 {
   float: right;
   color: #FFFFFF;
   font-size: 3rem;
-  margin-left: 10px;
+  margin-left: 25px;
 }
 
 .card {
@@ -100,7 +100,7 @@ h1 {
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
-  margin: 16px 16px 16px 20px;
+  margin: 16px 16px 0px 20px;
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
@@ -141,6 +141,7 @@ button[disabled] {
 }
 
 footer {
+  height: 55px;
   text-align: center;
   color: #FFFFFF;
   background-color: #343A40;
