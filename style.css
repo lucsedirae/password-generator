@@ -17,6 +17,10 @@ body {
   background-color: #f9fbfd;
 }
 
+#dark-mode-toggle {
+  font-size: 48px;
+}
+
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
