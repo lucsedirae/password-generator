@@ -12,8 +12,10 @@ The generator features these key characteristics:<br>
 -The character sets for each parameter type include:<br>
   -Latin alphabet uppercase and lowercase characters<br>
   -Integers 0-9<br>
-  -Special characters: !@#$%^&*()?-_=+/][}{`~<br>
+  -Special characters<br>
 -The code was written with a focus on being efficient and compact but easy to follow.<br>
 -A copy to clipboard button allowing for easy transfer of the newly generated password to the clipboard.<br>
--A collection of useful links to important security-related articles
+-A collection of useful links to important security-related articles<br>
+![screenshot](./assets/pwordgen-screenshot.png)
+
 
