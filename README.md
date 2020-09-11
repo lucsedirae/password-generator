@@ -16,6 +16,7 @@ The generator features these key characteristics:<br>
 -The code was written with a focus on being efficient and compact but easy to follow.<br>
 -A copy to clipboard button allowing for easy transfer of the newly generated password to the clipboard.<br>
 -A collection of useful links to important security-related articles<br>
-![screenshot](./assets/pwordgen-screenshot.png)
+<br>
+![screenshot](./Assets/pwordgen-screenshot.png)
 
 
